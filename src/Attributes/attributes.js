@@ -1,27 +1,28 @@
-import { useEffect, useState } from "react";
 import records from "../records.json";
 function Attributes() {
-  const [data, setData] = useState([]);
-
-  console.log(Object.entries(data));
-  useEffect(() => {
-    fetch("http://localhost:8000/employees")
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => setData(res))
-      .catch((err) => console.log(err.message));
-  }, []);
-
+  let entries = Object.entries(records.employees);
+  console.log(entries);
+  const attributes = Object.keys(records.employees[0]);
+  console.log(attributes);
   return (
     <>
       <div className="container">
         <div className="card">
           <div className="card-title">
             <h2>List of attributes</h2>
-            <ul>
+            {/* <ul>
               <div>{Object.keys(Object.assign({}, ...records.employees))}</div>
-            </ul>
+            </ul> */}
+            <table id="attributes" style={{ width: "100%" }}>
+              <tr>
+                <th>{attributes[0]}</th>
+                <th>{attributes[1]}</th>
+                <th>{attributes[2]}</th>
+                <th>{attributes[3]}</th>
+
+                <th>{attributes[6]}</th>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
