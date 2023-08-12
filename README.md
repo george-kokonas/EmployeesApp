@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Server side
+This project runs the saved data from the user with the command npx json-server --watch <jsonfilename> --port <chosen port>
+
 ## Available Scripts
 
 In the project directory, you can run:
