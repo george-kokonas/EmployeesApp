@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import records from "../records.json";
 function Attributes() {
   const [data, setData] = useState([]);
 
@@ -20,9 +20,7 @@ function Attributes() {
           <div className="card-title">
             <h2>List of attributes</h2>
             <ul>
-              {Object.entries(data).map((key) => (
-                <p>{}</p>
-              ))}
+              <div>{Object.keys(Object.assign({}, ...records.employees))}</div>
             </ul>
           </div>
         </div>
