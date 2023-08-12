@@ -8,7 +8,7 @@ function Navbarr() {
     <>
       <Navbar bg="primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand to="/">EmployeesApp</Navbar.Brand>
+          <Navbar.Brand>EmployeesApp</Navbar.Brand>
 
           <Link to="/attributes">Attributes</Link>
           <Link to="/">Employees</Link>
