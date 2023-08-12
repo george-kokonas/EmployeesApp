@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ava",
+      "birth": "2023-08-08",
+      "address": "Athens, Ελλάδα",
+      "long": "23.7275388",
+      "lat": "37.9838096",
+      "license": "YES"
+    },
+    {
+      "id": 2,
+      "name": "Jenny",
+      "birth": "2023-08-22",
+      "address": "Peristeri, Ελλάδα",
+      "long": "23.6887439",
+      "lat": "38.0109715",
+      "license": "YES"
+    }
+  ]
+}
