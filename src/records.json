@@ -17,6 +17,15 @@
       "long": "23.6887439",
       "lat": "38.0109715",
       "license": "YES"
+    },
+    {
+      "id": 3,
+      "name": "hey",
+      "birth": "2023-08-10",
+      "address": "Athens International Airport Eleftherios Venizelos (ATH), Αττική Οδός, Σπάτα, Ελλάδα",
+      "long": "23.9484348",
+      "lat": "37.9358409",
+      "license": "YES"
     }
   ]
 }
