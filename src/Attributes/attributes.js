@@ -7,7 +7,7 @@ import records from "../records.json";
 
 function Attributes() {
   const [data, setData] = useState([]);
-
+  console.log(records.employees[0]);
   function handleDeleteAttribute(id) {
     const confirm = window.confirm("Do you like to Delete?");
     if (confirm) {
@@ -43,7 +43,7 @@ function Attributes() {
             <table id="attributes" style={{ width: "100%" }}>
               <tbody>
                 {}
-                {Object.keys(data).map((item, index) => (
+                {data.employees.map((item, index) => (
                   <tr key={index}>
                     {" "}
                     <td>{item}</td>
