@@ -17,7 +17,7 @@ import CustomMarker from "./missionmarker.png";
 
 function Maps() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCe2OPPDBp4vgb-cj3jGf8E31wnSREbuSE",
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
   });
 
