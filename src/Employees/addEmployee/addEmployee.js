@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./addEmployee.css";
 import { Link, useNavigate } from "react-router-dom";
 import Longlat from "./longlat";
@@ -39,9 +39,25 @@ function AddEmployee() {
         console.log(err.message);
       });
   };
-  // function hasLicense(event) {
-  //   setLicense(event.target.checked);
-  // }
+
+  useEffect(() => {
+    let today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const regexddmmyyyy =
+      /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/;
+    let matches = regexddmmyyyy.test(birth);
+    if (matches) {
+      if (new Date(birth) < today) {
+        setValidation(true);
+      } else {
+        setValidation(false);
+      }
+    }
+  }, [birth]);
+  const handleChanged = (e) => {
+    setBirth(e.target.value);
+  };
   return (
     <>
       <div className="row">
@@ -82,17 +98,24 @@ function AddEmployee() {
                           </span>
                         )}
                       </div>
+                      <div>
+                        <label htmlFor="yr">Birth Date</label>
+                        <input
+                          required
+                          value={birth}
+                          onChange={handleChanged}
+                          className="form-control"
+                          type="text"
+                          id="date"
+                          placeholder="23/09/1994"
+                        />
 
-                      <label htmlFor="yr">Birth Date</label>
-                      <input
-                        required
-                        value={birth}
-                        onChange={(e) => setBirth(e.target.value)}
-                        className="form-control"
-                        type="date"
-                        id="date"
-                        placeholder="Date of Birth"
-                      />
+                        {validation ? (
+                          <p>Valid Date</p>
+                        ) : (
+                          <p className="text-danger">*Invalid Date</p>
+                        )}
+                      </div>
                       <Longlat />
                       <label htmlFor="address">
                         Address in longtitude and latitude
