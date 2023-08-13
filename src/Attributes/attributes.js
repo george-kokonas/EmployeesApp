@@ -1,4 +1,5 @@
 // import EditAttributes from "../Attributes/editAttributes";
+
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -6,12 +7,11 @@ import records from "../records.json";
 
 function Attributes() {
   const [data, setData] = useState([]);
-  const attributes = Object.keys(records.employees[0]);
-  console.log(typeof records.employees);
+
   function handleDeleteAttribute(id) {
     const confirm = window.confirm("Do you like to Delete?");
     if (confirm) {
-      fetch("http://localhost:8000/employees" + id, {
+      fetch("http://localhost:8000/employees/" + id, {
         method: "DELETE",
       })
         .then((res) => {
@@ -42,14 +42,15 @@ function Attributes() {
 
             <table id="attributes" style={{ width: "100%" }}>
               <tbody>
-                {data.map((item) => (
-                  <tr key={item.id}>
-                    <td>{Object.keys(records.employees[0])}</td>
-
+                {}
+                {Object.keys(data).map((item, index) => (
+                  <tr key={index}>
+                    {" "}
+                    <td>{item}</td>
                     <td>
                       <button
                         className="text-decoration-none btn btn-sm btn-danger "
-                        onClick={(e) => handleDeleteAttribute(item.id)}
+                        onClick={(e) => handleDeleteAttribute(item)}
                       >
                         Delete
                       </button>
