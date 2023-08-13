@@ -7,7 +7,7 @@ import records from "../records.json";
 
 function Attributes() {
   const [data, setData] = useState([]);
-  console.log(records.employees[0]);
+  console.log(Array.isArray(data));
   function handleDeleteAttribute(id) {
     const confirm = window.confirm("Do you like to Delete?");
     if (confirm) {
@@ -41,23 +41,40 @@ function Attributes() {
             <h2>List of attributes</h2>
 
             <table id="attributes" style={{ width: "100%" }}>
-              <tbody>
+              <thead>
+                {data.length > 0 && (
+                  <tr>
+                    <th></th>
+                    {Object.keys(data[0]).map((item) => {
+                      return (
+                        <>
+                          <td key={item}>{item}</td>
+                          <td>
+                            <button
+                              className="text-decoration-none btn btn-sm btn-danger "
+                              onClick={(e) => handleDeleteAttribute(item)}
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </>
+                      );
+                    })}
+                  </tr>
+                )}
+              </thead>
+              {/* <tbody>
                 {}
-                {data.employees.map((item, index) => (
+                {Object.keys(data[0]).map((item, index) => (
                   <tr key={index}>
                     {" "}
                     <td>{item}</td>
                     <td>
-                      <button
-                        className="text-decoration-none btn btn-sm btn-danger "
-                        onClick={(e) => handleDeleteAttribute(item)}
-                      >
-                        Delete
-                      </button>
+                     
                     </td>
                   </tr>
                 ))}
-              </tbody>
+              </tbody> */}
             </table>
           </div>
           <Link to="/create">Add an attribute (+)</Link>
