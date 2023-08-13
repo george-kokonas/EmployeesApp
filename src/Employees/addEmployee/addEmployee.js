@@ -107,7 +107,7 @@ function AddEmployee() {
                           className="form-control"
                           type="text"
                           id="date"
-                          placeholder="23/09/1994"
+                          placeholder="e.g. 23/09/1994"
                         />
 
                         {validation ? (
@@ -117,9 +117,7 @@ function AddEmployee() {
                         )}
                       </div>
                       <Longlat />
-                      <label htmlFor="address">
-                        Address in longtitude and latitude
-                      </label>
+                      <label htmlFor="address"></label>
                       <input
                         required
                         value={address}

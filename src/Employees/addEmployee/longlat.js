@@ -26,7 +26,9 @@ function Longlat() {
     <>
       <hr />
 
-      <p>Enter the address and set the coordinates in the input below</p>
+      <p className="text-primary">
+        Enter the address and copy the coordinates in the input field below:
+      </p>
       <PlacesAutocomplete
         value={addresses}
         onChange={setAddresses}
