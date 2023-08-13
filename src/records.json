@@ -8,6 +8,24 @@
       "long": "23.9484348",
       "lat": "37.9358409",
       "license": "YES"
+    },
+    {
+      "id": 4,
+      "name": "Ava",
+      "birth": "13/02/2022",
+      "address": "Athens,Greece",
+      "long": "23.7275388",
+      "lat": "37.9838096",
+      "license": "no"
+    },
+    {
+      "id": 5,
+      "name": "Elsa",
+      "birth": "12/03/1994",
+      "address": "Chalkidiki, Ελλάδα",
+      "long": "23.287085",
+      "lat": "40.3694997",
+      "license": "YES"
     }
   ]
 }
