@@ -3,8 +3,6 @@ import "./addEmployee.css";
 import { Link, useNavigate } from "react-router-dom";
 import Longlat from "./longlat";
 function AddEmployee() {
-  const [license, setLicense] = useState("YES");
-
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
@@ -12,6 +10,7 @@ function AddEmployee() {
 
   const [long, setLong] = useState("");
   const [lat, setLat] = useState("");
+  const [license, setLicense] = useState("YES");
   const [validation, setValidation] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = (e) => {
